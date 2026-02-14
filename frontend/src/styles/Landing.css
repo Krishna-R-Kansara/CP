@@ -1,0 +1,497 @@
+.landing {
+    min-height: 100vh;
+    background: white;
+}
+
+/* Hero Section */
+.hero {
+    background: white;
+    padding: 120px 40px 100px;
+    text-align: center;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 48px;
+    color: var(--gray-700);
+    font-weight: 400;
+    animation: fadeInUp 1s ease;
+    line-height: 1.5;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1.2s ease;
+}
+
+.hero-buttons .btn {
+    min-width: 180px;
+    padding: 18px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-primary {
+    background: #0B5ED7;
+    color: white;
+}
+
+.hero-buttons .btn-primary:hover {
+    background: #0952c4;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(11, 94, 215, 0.3);
+}
+
+.hero-buttons .btn-secondary {
+    background: white;
+    color: #F97316;
+    border: 2px solid #F97316;
+}
+
+.hero-buttons .btn-secondary:hover {
+    background: #F97316;
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Services Section */
+.services {
+    padding: 100px 40px;
+    background: #F8FAFC;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.services h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #0B5ED7, #F97316);
+    margin: 24px auto;
+    border-radius: 2px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    max-width: 1200px;
+    margin: 60px auto 0;
+}
+
+.service-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-top: 5px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    transition: height 0.4s ease;
+}
+
+.service-card:nth-child(1)::before {
+    background: #0B5ED7;
+}
+
+.service-card:nth-child(2)::before {
+    background: #F97316;
+}
+
+.service-card:nth-child(3)::before {
+    background: #10B981;
+}
+
+.service-card:nth-child(4)::before {
+    background: #F59E0B;
+}
+
+.service-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-card:hover::before {
+    height: 100%;
+    opacity: 0.05;
+}
+
+.service-icon {
+    font-size: 64px;
+    margin-bottom: 24px;
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.service-card:hover .service-icon {
+    animation: none;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.service-card p {
+    font-size: 15px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Newsletter Section */
+.newsletter {
+    background: white;
+    padding: 80px 40px;
+    text-align: center;
+    border-top: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.newsletter h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #0B5ED7, #F97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.newsletter p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: var(--gray-700);
+}
+
+.newsletter-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.newsletter-form input {
+    flex: 1;
+    min-width: 300px;
+    padding: 16px 24px;
+    border: 2px solid var(--gray-300);
+    border-radius: 12px;
+    font-size: 16px;
+    background: white;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.newsletter-form input::placeholder {
+    color: var(--gray-400);
+}
+
+.newsletter-form input:focus {
+    border-color: #0B5ED7;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(11, 94, 215, 0.1);
+}
+
+.newsletter-form button {
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #0B5ED7, #F97316);
+    color: white;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(11, 94, 215, 0.3);
+}
+
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(11, 94, 215, 0.4);
+}
+
+/* Footer */
+.landing-footer {
+    background: #1E293B;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.landing-footer p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .services-grid {
+        max-width: 1000px;
+        gap: 24px;
+    }
+
+    .service-card {
+        padding: 32px 24px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 56px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 20px 60px;
+        min-height: 500px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        margin-bottom: 36px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 350px;
+        padding: 16px 32px;
+        font-size: 16px;
+    }
+
+    .services {
+        padding: 60px 20px;
+    }
+
+    .services h2 {
+        font-size: 32px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 32px 24px;
+    }
+
+    .service-icon {
+        font-size: 56px;
+    }
+
+    .newsletter {
+        padding: 60px 20px;
+    }
+
+    .newsletter h2 {
+        font-size: 28px;
+    }
+
+    .newsletter p {
+        font-size: 16px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+        max-width: 100%;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 16px 40px;
+        min-height: 450px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        margin-bottom: 16px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        margin-bottom: 28px;
+    }
+
+    .hero-buttons .btn {
+        max-width: 100%;
+        padding: 14px 28px;
+        font-size: 15px;
+    }
+
+    .services {
+        padding: 40px 16px;
+    }
+
+    .services h2 {
+        font-size: 26px;
+    }
+
+    .service-card {
+        padding: 28px 20px;
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+    }
+
+    .service-card p {
+        font-size: 14px;
+    }
+
+    .service-icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .newsletter {
+        padding: 40px 16px;
+    }
+
+    .newsletter h2 {
+        font-size: 24px;
+    }
+
+    .newsletter p {
+        font-size: 15px;
+        margin-bottom: 28px;
+    }
+
+    .newsletter-form input {
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+
+    .newsletter-form button {
+        padding: 14px 32px;
+        font-size: 15px;
+    }
+}
+
+/* Dark Mode Styles */
+body.dark-mode .landing,
+body.dark-mode .hero {
+    background: var(--background);
+}
+
+body.dark-mode .services {
+    background: var(--gray-100);
+}
+
+body.dark-mode .service-card,
+body.dark-mode .newsletter {
+    background: var(--white);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .newsletter-form input {
+    background: var(--gray-100);
+    border-color: var(--gray-300);
+    color: var(--text-primary);
+}
+
+body.dark-mode .newsletter-form input::placeholder {
+    color: var(--gray-400);
+}

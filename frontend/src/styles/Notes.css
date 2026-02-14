@@ -1,0 +1,329 @@
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.note-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    border-left: 4px solid var(--primary-blue);
+}
+
+.note-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.note-card.pinned {
+    border-left-color: var(--primary-orange);
+    background: linear-gradient(to bottom right, #FFF7ED 0%, var(--white) 100%);
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.note-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    word-break: break-word;
+}
+
+.pin-icon {
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.pin-icon:hover {
+    transform: scale(1.2);
+}
+
+.note-subject {
+    font-size: 13px;
+    color: var(--gray-600);
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+.note-content {
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.6;
+    margin-bottom: 12px;
+    max-height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.note-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.note-tag {
+    background: var(--gray-100);
+    color: var(--gray-700);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.note-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid var(--gray-200);
+}
+
+.note-date {
+    font-size: 12px;
+    color: var(--gray-500);
+}
+
+.note-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Modal for viewing/editing notes */
+.note-modal .modal {
+    max-width: 600px;
+}
+
+.note-modal textarea {
+    min-height: 200px;
+}
+
+.tag-input-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    padding: 8px 12px;
+    border: 2px solid var(--gray-300);
+    border-radius: 8px;
+    min-height: 44px;
+}
+
+.tag-input-container:focus-within {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(11, 94, 215, 0.1);
+}
+
+.tag-item {
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tag-remove {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.tag-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    min-width: 100px;
+    padding: 4px;
+    font-size: 14px;
+}
+
+.color-picker {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.color-option {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.2s;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.selected {
+    border-color: var(--text-primary);
+    box-shadow: 0 0 0 2px var(--white);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .notes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .note-modal .modal {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .notes-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 20px;
+    }
+
+    .note-card {
+        padding: 18px;
+    }
+
+    .note-title {
+        font-size: 16px;
+    }
+
+    .note-content {
+        font-size: 13px;
+        max-height: 100px;
+    }
+
+    .note-subject {
+        font-size: 12px;
+    }
+
+    .note-tag {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+
+    .note-footer {
+        padding-top: 10px;
+    }
+
+    .note-date {
+        font-size: 11px;
+    }
+
+    .note-actions {
+        gap: 6px;
+    }
+
+    .note-actions .btn-sm {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .note-modal .modal {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    .note-modal textarea {
+        min-height: 150px;
+        font-size: 14px;
+    }
+
+    .tag-input-container {
+        padding: 6px 10px;
+        min-height: 40px;
+    }
+
+    .tag-item {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+
+    .tag-input {
+        font-size: 13px;
+    }
+
+    .color-picker {
+        gap: 6px;
+    }
+
+    .color-option {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .note-card {
+        padding: 16px;
+    }
+
+    .note-title {
+        font-size: 15px;
+    }
+
+    .note-content {
+        font-size: 12px;
+        max-height: 90px;
+    }
+
+    .pin-icon {
+        font-size: 18px;
+    }
+
+    .note-modal .modal {
+        padding: 16px;
+    }
+
+    .color-option {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Dark Mode Styles */
+body.dark-mode .note-card {
+    background: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .note-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .note-card.pinned {
+    background: linear-gradient(to bottom right, var(--gray-100) 0%, var(--white) 100%);
+}
+
+body.dark-mode .note-tag {
+    background: var(--gray-200);
+    color: var(--text-primary);
+}
+
+body.dark-mode .note-footer {
+    border-top-color: var(--gray-200);
+}
+
+body.dark-mode .tag-input-container {
+    background: var(--gray-100);
+    border-color: var(--gray-300);
+}
+
+body.dark-mode .tag-input {
+    background: transparent;
+    color: var(--text-primary);
+}

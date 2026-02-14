@@ -1,0 +1,174 @@
+.footer {
+    background: #1E293B;
+    color: white;
+    margin-top: 60px;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-section h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.footer-description {
+    color: #94A3B8;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: #F8FAFC;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #94A3B8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #0B5ED7;
+}
+
+.footer-section p {
+    color: #94A3B8;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.social-links a {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    border-top: 1px solid #334155;
+    padding: 24px 40px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #94A3B8;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .footer-content {
+        padding: 48px 32px 32px;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 40px 20px 20px;
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .footer-section h3,
+    .footer-logo {
+        font-size: 22px;
+    }
+
+    .footer-section h4 {
+        font-size: 16px;
+        margin-bottom: 14px;
+    }
+
+    .footer-description,
+    .footer-links a,
+    .footer-section p {
+        font-size: 13px;
+    }
+
+    .social-links {
+        margin-top: 12px;
+        gap: 14px;
+    }
+
+    .social-links a {
+        font-size: 22px;
+    }
+
+    .footer-bottom {
+        padding: 20px;
+    }
+
+    .footer-bottom p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        padding: 32px 16px 16px;
+        gap: 24px;
+    }
+
+    .footer-section h3,
+    .footer-logo {
+        font-size: 20px;
+    }
+
+    .footer-section h4 {
+        font-size: 15px;
+    }
+
+    .footer-bottom {
+        padding: 16px;
+    }
+}
+
+/* Dark Mode Styles */
+body.dark-mode .footer {
+    background: #0B1120;
+    border-top: 1px solid var(--gray-200);
+}
+
+body.dark-mode .footer-bottom {
+    border-top-color: #1E293B;
+}
